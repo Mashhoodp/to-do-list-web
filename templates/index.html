@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do List</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+<div id="container">
+    <h1>To-Do List<i class="fa fa-plus"></i></h1>
+    <form action="/" method="POST" id="task_form">
+        <div class="slide">
+            <input type="text" name="content" placeholder="New Item">
+        </div>
+    </form>
+
+    <ul>
+        {% for task in tasks %}
+            <li><span><a href="{{ url_for('delete', task_id=task.id) }}"><i class="fa fa-trash-o"></i></a></span>{{ task.content }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script  src="../static/js/script.js"></script>
+
+</body>
+</html>
