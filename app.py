@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tasks.db'  # Change the database URI as needed
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tasks.db'
 db = SQLAlchemy(app)
 
 
@@ -12,7 +12,6 @@ class Task(db.Model):
 
 
 # with app.app_context():
-#     db.drop_all()
 #     db.create_all()
 
 
